@@ -20,10 +20,32 @@ const getNameError = (name) => {
     return "";
 }
 
-(function() {
+const getCountries = async () => {
+    const apiUrl = 'https://countries-cities.p.rapidapi.com/location/country/list';
+    const apiKey = document.RapidApiKey;
+    const params = {
+        method: 'GET',
+        headers: {
+          'X-RapidAPI-Key': apiKey,
+          'X-RapidAPI-Host': 'countries-cities.p.rapidapi.com'
+        }
+    }
+
+    try {
+        const response = await fetch(apiUrl, params);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+(async function() {
     const name = document.getElementById('name');
     const password = document.getElementById('password');
     const submitButton = document.getElementById('submit');
+    const sendQueryButton = document.getElementById('send_query');
+
     let nameTxt = "";
     let passwordTxt = "";
 
@@ -35,6 +57,12 @@ const getNameError = (name) => {
     password.oninput = function(e) { 
         passwordTxt = e.target.value;
         console.log('Password: event.target.value=', e.target.value)
+    }
+
+    sendQueryButton.onclick = async function getCountriesWrapper(e) {
+        e.preventDefault();
+        const countries = await getCountries();
+        console.log("List of countries =>", countries);
     }
 
     // Here we assign a function to "onclick" method of Submit button
