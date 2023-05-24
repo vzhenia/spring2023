@@ -21,13 +21,13 @@ const getNameError = (name) => {
 }
 
 const getCountries = async () => {
-    const apiUrl = 'https://countries-cities.p.rapidapi.com/location/country/list';
+    const apiUrl = 'https://wft-geo-db.p.rapidapi.com/v1/geo/countries';
     const apiKey = document.RapidApiKey;
     const params = {
         method: 'GET',
         headers: {
           'X-RapidAPI-Key': apiKey,
-          'X-RapidAPI-Host': 'countries-cities.p.rapidapi.com'
+          'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
         }
     }
 
