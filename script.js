@@ -34,18 +34,34 @@ const getCountries = async () => {
     try {
         const response = await fetch(apiUrl, params);
         const data = await response.json();
+        console.log("List of countries =>", data);
         return data;
     } catch (error) {
         console.error('Error:', error);
     }
 }
 
+async function createCountiesOptions(){
+    const countries = await getCountries();
+    const selectElement = document.getElementById("countries")
+    
+    for (const country of countries.data) {
+        const option = document.createElement('option')
+        option.setAttribute("id", country.code)
+        const cName = document.createTextNode(country.name)
+        option.appendChild(cName)
+        selectElement.appendChild(option)
+    }
+    console.log('Dropdown with countries built...')
+}
+
 (async function() {
+    await createCountiesOptions();
+    console.log('Now we continue....')
     const name = document.getElementById('name');
     const password = document.getElementById('password');
     const submitButton = document.getElementById('submit');
-    const sendQueryButton = document.getElementById('send_query');
-
+    
     let nameTxt = "";
     let passwordTxt = "";
 
@@ -57,12 +73,6 @@ const getCountries = async () => {
     password.oninput = function(e) { 
         passwordTxt = e.target.value;
         console.log('Password: event.target.value=', e.target.value)
-    }
-
-    sendQueryButton.onclick = async function getCountriesWrapper(e) {
-        e.preventDefault();
-        const countries = await getCountries();
-        console.log("List of countries =>", countries);
     }
 
     // Here we assign a function to "onclick" method of Submit button
