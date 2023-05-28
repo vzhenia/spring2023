@@ -1,0 +1,98 @@
+h1 {
+    color: blue;
+    font-size: 24px;
+  }
+
+  p {
+    color: #333;
+    font-size: 16px;
+  }
+
+  form {
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Стили для текстового поля ввода */
+  input[type="text"] {
+    width: 200px;
+    padding: 5px;
+  }
+  
+  /* Стили для параграфа с отображением ошибки имени */
+  #nameErrorDisplay {
+    color: red;
+  }
+  
+  /* Стили для текстового поля ввода пароля */
+  input[type="password"] {
+    width: 200px;
+    padding: 5px;
+  }
+  
+  /* Стили для параграфа с отображением ошибки пароля */
+  #passwordErrorDisplay {
+    color: red;
+  }
+  
+  /* Стили для кнопки отправки формы */
+  input[type="submit"] {
+    padding: 10px 20px;
+    background-color: blue;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Стили для параграфов с результатами имени и пароля */
+  #resultName,
+  #resultPassword {
+    margin-top: 10px;
+  }
+  
+  /* Стили для кнопок отправки запроса и очистки формы */
+  #send_query,
+  #clear_Form {
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Стили для блока с информацией о команде */
+  div {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f2f2f2;
+  }
+
+  h2 {
+    color: green;
+    font-size: 20px;
+  }
+
+  h3 {
+    color: #333;
+    font-size: 18px;
+  }
+
+  ul {
+    margin: 0;
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 5px;
+  }
+
+  footer {
+    margin-top: 20px;
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+  }
