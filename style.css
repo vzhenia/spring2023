@@ -96,3 +96,8 @@ h1 {
     font-size: 12px;
     text-align: center;
   }
+
+  select {
+    width: 215px;
+    padding: 5px;
+  }
